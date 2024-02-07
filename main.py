@@ -7,7 +7,7 @@ This script allows user to query information about a particular county and city 
 
 
 def read_csv(file_extension) -> {}:
-    data_dict = {} # Storage dictionary for prefix's
+    data_dict = {}  # Storage dictionary for prefix's
 
     with open(file_extension, 'r') as file:  # Opening file in python
         csv_reader = csv.DictReader(file)  # Reading file in python
@@ -20,7 +20,7 @@ def read_csv(file_extension) -> {}:
 
 
 def main():
-    data = read_csv('/Users/olivermclane/Downloads/MontanaCounties.csv')  # Pulling data into via csv method
+    data = read_csv('MontanaCounties.csv')  # Pulling data into via csv method
 
     querying = True
     while querying:  # Starting query loop
@@ -34,7 +34,8 @@ def main():
                 query = input("Please enter a valid county number: ")
 
             display_format = input(
-                "How would you like to view your license plate information? Type 1 for county, 2 for city, and 3 for Both: ")  # Request Style of print they would like for data
+                "How would you like to view your license plate information? Type 1 for county, 2 for city, and 3 for "
+                "Both: ")  # Request Style of print they would like for data
 
             while display_format not in ["1", "2", "3"]:
                 print("Invalid input. Please enter 1, 2, or 3.")
