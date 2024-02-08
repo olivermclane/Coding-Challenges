@@ -31,12 +31,12 @@ def read_csv(file_extension) -> {}:
 
 
 def city_to_county(data):
-    city_to_county = {}
-    for row in data.values():
-        city = row['County Seat']
-        county = row['County']
-        prefix = row['License Plate Prefix']
-        city_to_county[city] = county, prefix
+    city_to_county = {}  # Create city to county dictionary
+    for row in data.values():  # Loop through data in csv
+        city = row['County Seat']  # Create row for County Seat
+        county = row['County']  # Create row for County
+        prefix = row['License Plate Prefix']  # Create Row for prefix
+        city_to_county[city] = county, prefix  # Assign values for dictionary
 
     return city_to_county
 
