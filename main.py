@@ -61,7 +61,7 @@ def query_license(data, prefix):
         city = input("City name: ")
         county = input("County name: ")
         data[prefix] = {'County Seat': city, 'County': county,
-                        'License Plate Prefix': prefix}  # Add the new information to the data dictionary
+                        'License Plate Prefix': prefix}
         write_csv('MontanaCounties.csv', list(data.values()))  # Update the CSV file
         return city, county
 
@@ -74,7 +74,6 @@ def query_city(data, city_to_county, city):
         print(f"City '{city}' not found. Please provide:")
         county = input("County name: ")
         prefix = input("License plate prefix (optional): ")
-        # Add the new information to the data dictionary and city-to-county mapping
         new_data = {'County Seat': city, 'County': county, 'License Plate Prefix': prefix}
         data[city] = new_data
         city_to_county[city] = county
